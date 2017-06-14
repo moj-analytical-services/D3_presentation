@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Final Example </title>
+  <script src="d3.v4.js"></script>
+</head>
+<body>
+  <div id="options">
+    <input name="updateDataButton" type="button" value="Update Data" onclick="updateData()" />
+    <input name="updateCirclesButton" type="button" value="Update Circles" onclick="updateCircles()" />
+  </div>
+</body>
+</html>
+<script>
+updateData = function(){
+	medalsData.forEach(function(d){d.gold = Math.floor(Math.random() * 50)});
+}
+
+updateCircles = function() {
+  // The each function is D3's version of the JavaScript forEach() function
+  d3.select("svg").selectAll("circle").each(function(d, i) {
+    d3.select(this).transition().attr("r", Math.floor(maxRadius*d.gold/maxGold));
+  })
+}
+
+updateSingleCircle = function(){
+	d3.select(this).each(function(d, i){
+  d.gold = Math.floor(Math.random() * 50);
+  d3.select(this).transition().attr("r",Math.floor(maxRadius*d.gold/maxGold));
+  });
+}
+
+// Define simple data
+var medalsData = [{Country: "AUS", gold: 31, silver: 42, bronze: 76},
+{Country: "CHN", gold: 74, silver: 53, bronze: 57},
+{Country: "GER", gold: 42, silver: 16, bronze: 43},
+{Country: "RUS", gold: 43, silver: 44, bronze: 56},
+{Country: "USA", gold: 125, silver: 109, bronze: 81}];
+
+// Let's also define some variables for our circle
+maxRadius = 50;
+maxDiameter = maxRadius*2;
+offset = 20;
+maxGold = d3.max(medalsData, function(d){return d.gold;});
+
+// Add svg and set height and width
+d3.select("body").append("svg").style("height",200).style("width",600);
+
+// Add circles to SVG, bind circles to data
+d3.select("svg")
+.selectAll("circle").data(medalsData).enter()
+.append("circle")
+.attr("r", function(d,i){return Math.floor(maxRadius*d.gold/maxGold);}) // Now we simply return d the value in each element of the array
+.attr("cx", function(d,i){return maxRadius + i*(offset+maxDiameter);})
+.attr("cy", maxRadius)
+.style("fill","red")
+.on("click",updateSingleCircle);
+</script>
