@@ -59,8 +59,7 @@ d3.select("svg").append("circle")
 .style("fill", "red");
 ```
 Like we added the svg to the body we now add a circle to the SVG drawing element. We set it's radius (r), centre x location (cx) and centre y position (cy) are all set to 50 (pixels) using the .attr() function. We then also set the colour of the circle to red using the .style() function. Our HTML will now have a little circle in the top right hand corner:
-
-EXAMPLE 1
+The result:
 ![alt text](images/example1.png "Example 1 results")
 
 ### Binding Data

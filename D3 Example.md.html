@@ -52,10 +52,10 @@ d3.select(<span class="hljs-string">"svg"</span>).append(<span class="hljs-strin
 .attr(<span class="hljs-string">"cy"</span>, <span class="hljs-number">50</span>)
 .style(<span class="hljs-string">"fill"</span>, <span class="hljs-string">"red"</span>);
 </code></pre>
-<p>Like we added the svg to the body we now add a circle to the SVG drawing element. We set it’s radius ®, centre x location (cx) and centre y position (cy) are all set to 50 (pixels) using the .attr() function. We then also set the colour of the circle to red using the .style() function. Our HTML will now have a little circle in the top right hand corner:</p>
-<p>EXAMPLE 1<br>
+<p>Like we added the svg to the body we now add a circle to the SVG drawing element. We set it’s radius ®, centre x location (cx) and centre y position (cy) are all set to 50 (pixels) using the .attr() function. We then also set the colour of the circle to red using the .style() function. Our HTML will now have a little circle in the top right hand corner:<br>
+The result:<br>
 <img src="images/example1.png" alt="alt text" title="Example 1 results"></p>
-<h3><a id="Binding_Data_65"></a>Binding Data</h3>
+<h3><a id="Binding_Data_64"></a>Binding Data</h3>
 <p>However the most useful part about D3 is the ability to add, select and delete elements to your HTML or SVG canvas where each element is bound to data. Let’s add data to each of our circle elements. We’ll use some data on the top 5 olympic gold medal winning countries in 2008:</p>
 <table class="table table-striped table-bordered">
 <thead>
@@ -136,7 +136,7 @@ d3.select(<span class="hljs-string">"svg"</span>)
 </code></pre>
 <p>The result:<br>
 <img src="images/example3.png" alt="alt text" title="example 3 results"></p>
-<h3><a id="Why_binding_data_is_useful_137"></a>Why binding data is useful</h3>
+<h3><a id="Why_binding_data_is_useful_136"></a>Why binding data is useful</h3>
 <p><em><strong>Note</strong>: This only works for objects in arrays. If our array only had values e.g. medalsData = [0, 10, 20, etc] the following example below and d3_demo.html would not work. This is due to how javaScript deals with passing values into functions rather than objects (for more info look into pass by value vs reference for JavaScript).</em></p>
 <p>To demonstrate this I am going to add two buttons our the HTML (using HTML and not D3).</p>
 <pre><code class="language-html">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"options"</span>&gt;</span>
@@ -188,9 +188,9 @@ d3.select(<span class="hljs-string">"svg"</span>)
 </code></pre>
 <p>This function is very similar to updateCircles. Except it has an additional line of code that changes the data (d) it’s bound to to a new random number.</p>
 <p>The code can be found in this git repo named final_example.html. You’ll notice that when messing with this html the transitions between changing circle radii is smooth. This is simply done by adding in <code>.transition()</code> before the <code>.attr(&quot;r&quot;, ...)</code> calls in the updateSingleCircle and and updateCircles functions.</p>
-<h4><a id="Expanding_This_Idea_198"></a>Expanding This Idea</h4>
+<h4><a id="Expanding_This_Idea_197"></a>Expanding This Idea</h4>
 <p>There is another HTML called d3_demo.html which expands on the ideas seen in section above. It allows you to randomly change all or parts of your data and then update your visualisation afterwards.</p>
-<h4><a id="Other_Useful_links_201"></a>Other Useful links:</h4>
+<h4><a id="Other_Useful_links_200"></a>Other Useful links:</h4>
 <ul>
 <li>Learning about HTML, CSS and JavaScript: <a href="https://www.w3schools.com/">https://www.w3schools.com/</a></li>
 <li>Understanding data binding / linking. Once you get your head around this D3 becomes a lot clearer!<br>
