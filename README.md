@@ -1,4 +1,6 @@
-# MoJ - Data Science Hub - Introduction to D3
+# Introduction to D3
+
+_Code in this document can be found in the examples folder of this repo._
 
 D3 ([Data Driven Documents](http://d3js.org)) is a javaScript library that enables users to create versatile web based visualisations. This is a very powerful library with a growing open-source community.
 
@@ -58,9 +60,9 @@ d3.select("svg").append("circle")
 .attr("cy", 50)
 .style("fill", "red");
 ```
-Like we added the svg to the body we now add a circle to the SVG drawing element. We set it's radius (r), centre x location (cx) and centre y position (cy) are all set to 50 (pixels) using the .attr() function. We then also set the colour of the circle to red using the .style() function. Our HTML will now have a little circle in the top right hand corner.
-
+Like we added the svg to the body we now add a circle to the SVG drawing element. We set it's radius (r), centre x location (cx) and centre y position (cy) are all set to 50 (pixels) using the .attr() function. We then also set the colour of the circle to red using the .style() function. Our HTML will now have a little circle in the top right hand corner:
 The result:
+
 ![alt text](images/example1.png "Example 1 results")
 
 ### Binding Data
@@ -197,7 +199,7 @@ This function is very similar to updateCircles. Except it has an additional line
 The code can be found in this git repo named final_example.html. You'll notice that when messing with this html the transitions between changing circle radii is smooth. This is simply done by adding in `.transition()` before the `.attr("r", ...)` calls in the updateSingleCircle and and updateCircles functions.
 
 #### Expanding This Idea
-There is another HTML called d3_demo.html which expands on the ideas seen in section above. It allows you to randomly change all or parts of your data and then update your visualisation afterwards.
+There is an HTML in the examples folder of this repo called d3_demo.html which expands on the ideas seen in section above. It allows you to randomly change all or parts of your data and then update your visualisation in different ways.
 
 #### Other Useful links:
 - Learning about HTML, CSS and JavaScript: https://www.w3schools.com/

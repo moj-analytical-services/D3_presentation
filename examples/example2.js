@@ -16,9 +16,9 @@ d3.select("body").append("svg").style("height", 200).style("width", 600);
 
 // Add circles to SVG, bind circles to data
 d3.select("svg")
-.selectAll("circle").data(medalsData).enter()
-.append("circle")
-.attr("r", maxRadius)
-.attr("cx", function(d,i){return maxRadius + i*(offset+maxDiameter);})
-.attr("cy", maxRadius)
-.style("fill","red");
+	.selectAll("circle").data(medalsData).enter()
+	.append("circle")
+	.attr("r", maxRadius)
+	.attr("cx", function(d,i){return maxRadius + i*(offset+maxDiameter);})
+	.attr("cy", maxRadius)
+	.style("fill","red");
